@@ -1,23 +1,30 @@
 ---
 name: chinese-copyright-application
-description: 用于生成中国软件著作权申请材料的完整工具包。支持从项目代码、文档等自动提取信息，生成软件著作权登记申请表、源代码文档（前后各30页）、用户手册和设计说明书。适用于微信小程序、Web应用、移动App、桌面应用等各类软件项目。当用户需要申请中国软件著作权时使用此skill。
+description: 用于生成中国软件著作权申请材料的完整工具包。支持从项目代码、文档等自动提取信息，生成软件著作权登记申请表、源代码文档（前后各30页）、用户手册和设计说明书，并自动转换为PDF文件。适用于微信小程序、Web应用、移动App、桌面应用等各类软件项目。当用户需要申请中国软件著作权时使用此skill。
 ---
 
 # 中国软件著作权申请材料生成
 
 ## 快速开始
 
-1. 分析项目结构和配置文件
-2. 提取项目基本信息（名称、版本、描述等）
-3. 生成申请材料：
+1. 询问著作权人的名称
+2. 分析项目结构和配置文件
+3. 提取项目基本信息（名称、版本、描述等）
+4. 生成申请材料：
    - 软件著作权登记申请表
    - 源代码文档（前后各30页）
    - 用户手册
    - 设计说明书
+5. 生成PDF文件
 
 ## 工作流程
 
-### 1. 项目信息收集
+### 1. 著作权人信息收集
+
+- 询问用户著作权人的名称
+- 确保在每一个生成的文档开头都包含著作权人名称
+
+### 2. 项目信息收集
 
 从以下位置收集项目信息：
 
@@ -35,9 +42,13 @@ description: 用于生成中国软件著作权申请材料的完整工具包。�
 - 查找配置文件（如 `pom.xml`, `build.gradle`, `Cargo.toml` 等）
 - 查找 README 文档
 
-### 2. 生成申请表
+### 3. 生成申请表
 
 使用 [application-form-template.md](references/application-form-template.md) 模板生成申请表。
+
+**格式要求：**
+- 软件全称：应当有辨识度，应该叫"xxx软件"
+- 版本号：保留两位，例如"1.0"、"1.1"等
 
 **必填字段：**
 - 软件全称
@@ -50,8 +61,20 @@ description: 用于生成中国软件著作权申请材料的完整工具包。�
 - 软件性质（原创/修改/衍生）
 - 软件分类
 - 代码行数
+- 开发的硬件环境
+- 运行的硬件环境
+- 开发该软件的操作系统
+- 软件开发环境/开发工具
+- 该软件的运行平台/操作系统
+- 软件运行支撑环境/支持软件
+- 编程语言
+- 源程序量
+- 开发目的
+- 面向领域/行业
+- 软件的主要功能
+- 软件的技术特点
 
-### 3. 生成源代码文档
+### 4. 生成源代码文档
 
 **要求：**
 - 前后各30页，每页50行
@@ -70,7 +93,7 @@ description: 用于生成中国软件著作权申请材料的完整工具包。�
 - 页面/组件文件（`pages/`, `components/`）
 - 配置文件（`config/`）
 
-### 4. 生成用户手册
+### 5. 生成用户手册
 
 使用 [user-manual-template.md](references/user-manual-template.md) 模板。
 
@@ -87,7 +110,7 @@ description: 用于生成中国软件著作权申请材料的完整工具包。�
 - 代码注释
 - 界面截图（如果有）
 
-### 5. 生成设计说明书
+### 6. 生成设计说明书
 
 使用 [design-doc-template.md](references/design-doc-template.md) 模板。
 
@@ -109,13 +132,20 @@ description: 用于生成中国软件著作权申请材料的完整工具包。�
 
 ## 输出格式
 
-所有文档以 Markdown 格式生成，便于后续转换为 Word 或 PDF。
+所有文档以 Markdown 格式生成，并自动转换为 PDF 文件。所有输出文件将放置在专门的文件夹中。
+
+**输出文件夹：**
+- `copyright-application-materials/`
 
 **输出文件：**
-- `软件著作权登记申请表.md`
-- `源代码文档.md`
-- `用户手册.md`
-- `设计说明书.md`
+- `copyright-application-materials/软件著作权登记申请表.md`
+- `copyright-application-materials/软件著作权登记申请表.pdf`
+- `copyright-application-materials/源代码文档.md`
+- `copyright-application-materials/源代码文档.pdf`
+- `copyright-application-materials/用户手册.md`
+- `copyright-application-materials/用户手册.pdf`
+- `copyright-application-materials/设计说明书.md`
+- `copyright-application-materials/设计说明书.pdf`
 
 ## 特殊处理
 
