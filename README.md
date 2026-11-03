@@ -1,5 +1,7 @@
 # Chinese Copyright Application Skill
 
+[![Try 软著申请材料全套生成 on Socialistic](https://socialistic.ai/api/embed/chinese-copyright-application-skill-532c02?lang=zh)](https://socialistic.ai/zh/skill/chinese-copyright-application-skill-532c02?utm_source=github&utm_medium=pr&utm_campaign=d3874e35&utm_content=badge)
+
 用于生成中国软件著作权申请材料的完整工具包。支持从项目代码、文档等自动提取信息，生成软件著作权登记申请表、源代码文档（前后各30页）、用户手册和设计说明书。适用于微信小程序、Web应用、移动App、桌面应用等各类软件项目。
 
 ## 功能特性
